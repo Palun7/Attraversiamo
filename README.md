@@ -1,0 +1,1 @@
+# Proyecto para manejar ventas y stock
