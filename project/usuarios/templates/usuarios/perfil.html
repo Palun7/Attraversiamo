@@ -9,5 +9,9 @@
         <div>
             <h1>Bienvenido {{ user.username }}</h1>
         </div>
+        <div class="editar_datos">
+            <a href="{% url 'usuarios:change_password' %}">Cambiar contraseña</a>
+            <a href="{% url 'usuarios:update_username' %}">Cambiar datos de usuario</a>
+        </div>
     </main>
 {% endblock content %}

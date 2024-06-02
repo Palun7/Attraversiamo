@@ -29,7 +29,7 @@ def update_username(request):
             return redirect('core:index')
     else:
         form = UpdateUsernameForm(instance=request.user)
-    return render(request, 'login/update_username.html', {'form': form})
+    return render(request, 'usuarios/update_username.html', {'form': form})
 
 @login_required
 def change_password(request):
@@ -42,7 +42,7 @@ def change_password(request):
             return redirect('core:index')
     else:
         form = CustomPasswordChangeForm(request.user)
-    return render(request, 'login/change_password.html', {'form': form})
+    return render(request, 'usuarios/change_password.html', {'form': form})
 
 @login_required
 def perfil(request):

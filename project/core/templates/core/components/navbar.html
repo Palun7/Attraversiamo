@@ -1,10 +1,13 @@
 <nav class="navbar">
     <ul>
         <li>
+            <a href="{% url 'core:index' %}">Inicio</a>
+        </li>
+        <li>
             <a href="">Ventas</a>
         </li>
         <li>
-            <a href="">Stock</a>
+            <a href="{% url 'stock:index' %}">Stock</a>
         </li>
         {% if user.is_authenticated %}
             <li>
