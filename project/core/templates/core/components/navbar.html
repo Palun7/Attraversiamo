@@ -1,0 +1,26 @@
+<nav class="navbar">
+    <ul>
+        <li>
+            <a href="">Ventas</a>
+        </li>
+        <li>
+            <a href="">Stock</a>
+        </li>
+        {% if user.is_authenticated %}
+            <li>
+                <a href="{% url 'usuarios:perfil' %}">{{ user.username }}</a>
+            </li>
+            <form action="{% url 'usuarios:logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="logout">Logout</button>
+            </form>
+        {% else %}
+            <li>
+                <a href="{% url 'usuarios:login' %}">Iniciar sesión</a>
+            </li>
+            <li>
+                <a href="{% url 'usuarios:signup' %}">Crear Usuario</a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>
