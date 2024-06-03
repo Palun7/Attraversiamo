@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    {% if form.instance.id %}
+        Editar Producto
+    {% else %}
+        Nuevo Producto
+    {% endif %}
+{% endblock title %}
+
+{% block content %}
+    <main class="contenedor_principal">
+        <div>
+            <h1>Nuevo Producto</h1>
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Guardar</button>
+        </form>
+        <a href="{% url 'stock:marca_create' %}">Cargar Marca</a>
+        <a href="{% url 'stock:categoria_create' %}">Cargar Categoría</a>
+        <a href="{% url 'stock:contenido_create' %}">Cargar Contenido</a>
+        <div>
+            <a href="{% url 'stock:index' %}">Volver</a>
+        </div>
+    </main>
+{% endblock content %}

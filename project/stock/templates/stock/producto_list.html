@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Lista de productos
+{% endblock title %}
+
+{% block content %}
+    <main class="contenedor_principal">
+        <div>
+            <h1>Productos</h1>
+        </div>
+        <div class="lista_productos">
+            {% for producto in productos %}
+                <div>
+                    <h3>{{ producto.nombre }} {{ producto.marca }} {{ producto.contenido }} ${{ producto.precio }}</h3>
+                    <a href="{% url 'stock:producto_detail' producto.id %}">Detalle del producto</a>
+                    <a href="{% url 'stock:producto_update' producto.id %}">Editar producto</a>
+                    <a href="{% url 'stock:producto_delete' producto.id %}">Eliminar producto</a>
+                </div>
+            {% endfor %}
+        </div>
+        <div>
+            <a href="{% url 'stock:index' %}">Volver</a>
+        </div>
+    </main>
+{% endblock content %}

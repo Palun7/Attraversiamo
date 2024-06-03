@@ -9,5 +9,9 @@
         <div>
             <h1>Stock</h1>
         </div>
+        <div class="links">
+            <a href="{% url 'stock:producto_create' %}">Crear producto</a>
+            <a href="{% url 'stock:producto_list' %}">Lista de productos</a>
+        </div>
     </main>
 {% endblock content %}

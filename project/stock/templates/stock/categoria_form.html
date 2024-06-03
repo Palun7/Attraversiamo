@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Nueva Categoría
+{% endblock title %}
+
+{% block content %}
+    <main class="contenedor_principal">
+        <div>
+            <h1>Nueva Categoría</h1>
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Guardar</button>
+        </form>
+        <div>
+            <a href="{% url 'stock:producto_create' %}">Volver</a>
+        </div>
+    </main>
+{% endblock content %}
