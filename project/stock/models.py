@@ -20,12 +20,11 @@ class Categoria(models.Model):
         verbose_name = 'Categoría'
         verbose_name_plural = 'Categorías'
 
-class Contenido(models.Model):
-    numero = models.CharField(max_length=10)
-    unidad_medida = models.CharField(max_length=10)
+class Talle(models.Model):
+    talle = models.CharField(max_length=10)
 
     def __str__(self):
-        return f'{self.numero} {self.unidad_medida}'
+        return self.talle
 
     class Meta:
         verbose_name = 'Contenido'
@@ -33,10 +32,11 @@ class Contenido(models.Model):
 
 class Producto(models.Model):
     nombre = models.CharField(max_length=100)
+    color = models.CharField(max_length=100)
     marca = models.ForeignKey('Marca', on_delete=models.SET_NULL, null=True, blank=True)
     categoria = models.ForeignKey('Categoria', on_delete=models.SET_NULL, null=True, blank=True)
     precio = models.FloatField()
-    contenido = models.ForeignKey('Contenido', on_delete=models.SET_NULL, null=True, blank=True)
+    talle = models.ForeignKey('Talle', on_delete=models.SET_NULL, null=True, blank=True)
     stock = models.PositiveIntegerField()
     foto = models.ImageField(upload_to='fotos', null=True, blank=True)
     actualizacion = models.DateTimeField(auto_now=True)
@@ -46,4 +46,4 @@ class Producto(models.Model):
         verbose_name_plural = 'Productos'
 
     def __str__(self):
-        return f'{self.nombre} {self.marca} {self.contenido}. Act: {self.actualizacion.day}/{self.actualizacion.month}/{self.actualizacion.year}'
+        return f'{self.nombre} {self.marca} {self.talle}. Act: {self.actualizacion.day}/{self.actualizacion.month}/{self.actualizacion.year}'

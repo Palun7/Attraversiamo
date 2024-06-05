@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView
-from .forms import ProductoForm, MarcaForm, CategoriaForm, ContenidoForm
-from .models import Producto, Marca, Categoria, Contenido
+from .forms import ProductoForm, MarcaForm, CategoriaForm, TalleForm
+from .models import Producto, Marca, Categoria, Talle
 from django.db.models import Q
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -48,15 +48,15 @@ class ProductoCreate(LoginRequiredMixin, CreateView):
 class MarcaCreate(LoginRequiredMixin, CreateView):
     model = Marca
     form_class= MarcaForm
-    success_url = reverse_lazy('stock:producto_form')
+    success_url = reverse_lazy('stock:producto_create')
 
 class CategoriaCreate(LoginRequiredMixin, CreateView):
     model = Categoria
     form_class= CategoriaForm
-    success_url = reverse_lazy('stock:producto_form')
+    success_url = reverse_lazy('stock:producto_create')
 
-class ContenidoCreate(LoginRequiredMixin, CreateView):
-    model = Contenido
-    form_class= ContenidoForm
-    success_url = reverse_lazy('stock:prodicto_form')
+class TalleCreate(LoginRequiredMixin, CreateView):
+    model = Talle
+    form_class= TalleForm
+    success_url = reverse_lazy('stock:producto_create')
 

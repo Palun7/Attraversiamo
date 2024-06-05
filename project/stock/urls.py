@@ -1,14 +1,13 @@
 from django.urls import path
 from .views import (
     index,
-    ProductoForm,
     ProductoUpdate,
     ProductoDetail,
     ProductoCreate,
     ProductoDelete,
     Productoview,
     MarcaCreate,
-    ContenidoCreate,
+    TalleCreate,
     CategoriaCreate
     )
 
@@ -22,6 +21,6 @@ urlpatterns = [
     path('stock/producto_detail/<int:pk>', ProductoDetail.as_view(), name='producto_detail'),
     path('stock/producto_delete/<int:pk>', ProductoDelete.as_view(), name='producto_delete'),
     path('stock/marca_create', MarcaCreate.as_view(), name='marca_create'),
-    path('stock/contenido_create', ContenidoCreate.as_view(), name='contenido_create'),
+    path('stock/talle_create', TalleCreate.as_view(), name='talle_create'),
     path('stock/categoria_create', CategoriaCreate.as_view(), name='categoria_create'),
 ]
