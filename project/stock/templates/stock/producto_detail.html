@@ -7,20 +7,20 @@
 {% block content %}
     <main class="contenedor_principal">
         <div>
-            <h1>{{ object.nombre }} ${{ object.precio }}</h1>
+            <h1>{{ object.nombre }} {{ object.marca }}</h1>
         </div>
         {% if object.foto %}
             <img src="{{ object.foto.url }}" alt="Foto de {{ object.nombre }}" width="500px" height="600px">
         {% endif %}
         <ul>
-            <li>Marca: {{ object.marca }}</li>
-            <li>Categoria: {{ object.categoria }}</li>
             <li>Contenido Neto: {{ object.contenido }}</li>
+            <li>Precio: ${{ object.precio }}</li>
+            <li>Categoria: {{ object.categoria }}</li>
             <li>Stock: {{ object.stock }}</li>
             <li>Última actualización: {{ object.actualizacion }}</li>
         </ul>
-        <div>
-            <a href="{% url 'stock:producto_list' %}">Volver</a>
+        <div class="contenedor_volver">
+            <a href="{% url 'stock:producto_list' %}" class="volver">Volver</a>
         </div>
     </main>
 {% endblock content %}

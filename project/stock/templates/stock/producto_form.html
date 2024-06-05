@@ -13,16 +13,27 @@
         <div>
             <h1>Nuevo Producto</h1>
         </div>
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data" class="formulario_signup">
             {% csrf_token %}
             {{ form }}
             <button type="submit">Guardar</button>
         </form>
-        <a href="{% url 'stock:marca_create' %}">Cargar Marca</a>
-        <a href="{% url 'stock:categoria_create' %}">Cargar Categoría</a>
-        <a href="{% url 'stock:contenido_create' %}">Cargar Contenido</a>
-        <div>
-            <a href="{% url 'stock:index' %}">Volver</a>
+        {% if form.instance.id %}
+        {% else %}
+        <div class="contenedor_cargar">
+            <a href="{% url 'stock:marca_create' %}" class="cargar">Cargar Marca</a>
+            <a href="{% url 'stock:categoria_create' %}" class="cargar">Cargar Categoría</a>
+            <a href="{% url 'stock:contenido_create' %}" class="cargar">Cargar Contenido</a>
         </div>
+        {% endif %}
+        {% if form.instance.id %}
+        <div class="contenedor_volver">
+            <a href="{% url 'stock:producto_list' %}" class="volver">Volver</a>
+        </div>
+        {% else %}
+        <div class="contenedor_volver">
+            <a href="{% url 'stock:index' %}" class="volver">Volver</a>
+        </div>
+        {% endif %}
     </main>
 {% endblock content %}

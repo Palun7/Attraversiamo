@@ -6,48 +6,16 @@
 
 {% block content %}
     <main class="contenedor_principal">
-        <form method="post">
+        <div>
+            <h1>Crear Usuario</h1>
+        </div>
+        <form method="post" class="formulario_signup">
             {% csrf_token %}
-            <div>
-                <label for="{{ form.nombre.id_for_label }}">Nombre:</label>
-                <input type="text" name="{{ form.nombre.name }}" id="{{ form.nombre.id_for_label }}" value="{{ form.nombre.value }}">
-                <div>{{ form.nombre.errors }}</div>
-            </div>
-            <div>
-                <label for="{{ form.apellido.id_for_label }}">Apellido:</label>
-                <input type="text" name="{{ form.apellido.name }}" id="{{ form.apellido.id_for_label }}" value="{{ form.apellido.value }}">
-                <div>{{ form.apellido.errors }}</div>
-            </div>
-            <div>
-                <label for="{{ form.username.id_for_label }}">Nombre de usuario:</label>
-                <input type="text" name="{{ form.username.name }}" id="{{ form.username.id_for_label }}" value="{{ form.username.value }}">
-                <div>{{ form.username.errors }}</div>
-            </div>
-            <div>
-                <label for="{{ form.mail.id_for_label }}">Email:</label>
-                <input type="email" name="{{ form.mail.name }}" id="{{ form.mail.id_for_label }}" value="{{ form.mail.value }}">
-                <div>{{ form.mail.errors }}</div>
-            </div>
-            <div>
-                <label for="{{ form.puesto.id_for_label }}">Puesto:</label>
-                <select name="{{ form.puesto.name }}" id="{{ form.puesto.id_for_label }}">
-                    {% for value, label in form.puesto.field.choices %}
-                    <option value="{{ value }}" {% if form.puesto.value == value %}selected{% endif %}>{{ label }}</option>
-                    {% endfor %}
-                </select>
-                <div>{{ form.puesto.errors }}</div>
-            </div>
-            <div>
-                <label for="{{ form.password1.id_for_label }}">Contraseña:</label>
-                <input type="password" name="{{ form.password1.name }}" id="{{ form.password1.id_for_label }}">
-                <div>{{ form.password1.errors }}</div>
-            </div>
-            <div>
-                <label for="{{ form.password2.id_for_label }}">Confirmar Contraseña:</label>
-                <input type="password" name="{{ form.password2.name }}" id="{{ form.password2.id_for_label }}">
-                <div>{{ form.password2.errors }}</div>
-            </div>
-            <button type="submit">Sign Up</button>
+            {{ form }}
+            <button type="submit">Crear</button>
         </form>
+        <div class="contenedor_volver">
+            <a href="{% url 'core:index' %}" class="volver">Volver</a>
+        </div>
     </main>
 {% endblock content %}

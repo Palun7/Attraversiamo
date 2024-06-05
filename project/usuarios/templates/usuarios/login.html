@@ -7,13 +7,16 @@
 {% block content %}
     <main class="contenedor_principal">
         <div class="titulo_login">
-            <h1>Bienvenido a la Ventas/Stock</h1>
+            <h1>Iniciar sesión</h1>
         </div>
-        <form method="post">
+        <form method="post" class="formulario_login">
             {% csrf_token %}
             {{ form }}
             <input type="hidden" name="next" value="{% url 'core:index' %}">
             <button type="submit">Iniciar sesión</button>
         </form>
+        <div class="contenedor_volver">
+            <a href="{% url 'core:index' %}" class="volver">Volver</a>
+        </div>
     </main>
 {% endblock content %}

@@ -30,31 +30,32 @@ class Productoview(ListView):
 class ProductoDetail(DetailView):
     model = Producto
 
-class ProductoUpdate(UpdateView):
+class ProductoUpdate(LoginRequiredMixin, UpdateView):
     model = Producto
     form_class= ProductoForm
     success_url = reverse_lazy('stock:producto_list')
 
-class ProductoDelete(DeleteView):
+class ProductoDelete(LoginRequiredMixin, DeleteView):
     model = Producto
     success_url = reverse_lazy('stock:producto_list')
 
-class ProductoCreate(CreateView, LoginRequiredMixin):
+class ProductoCreate(LoginRequiredMixin, CreateView):
     model = Producto
     form_class= ProductoForm
+    login_url = reverse_lazy('usuarios:login')
     success_url = reverse_lazy('stock:index')
 
-class MarcaCreate(CreateView, LoginRequiredMixin):
+class MarcaCreate(LoginRequiredMixin, CreateView):
     model = Marca
     form_class= MarcaForm
     success_url = reverse_lazy('stock:producto_form')
 
-class CategoriaCreate(CreateView, LoginRequiredMixin):
+class CategoriaCreate(LoginRequiredMixin, CreateView):
     model = Categoria
     form_class= CategoriaForm
     success_url = reverse_lazy('stock:producto_form')
 
-class ContenidoCreate(CreateView, LoginRequiredMixin):
+class ContenidoCreate(LoginRequiredMixin, CreateView):
     model = Contenido
     form_class= ContenidoForm
     success_url = reverse_lazy('stock:prodicto_form')

@@ -9,13 +9,13 @@
         <div>
             <h1>Editar Username</h1>
         </div>
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" class="formulario_login">
             {% csrf_token %}
             {{ form }}
                 <button type="submit">Guardar</button>
         </form>
-        <div>
-            <a href="{% url 'usuarios:perfil' %}">Volver</a>
+        <div class="contenedor_volver">
+            <a href="{% url 'usuarios:perfil' %}" class="volver">Volver</a>
         </div>
     </main>
 {% endblock content %}

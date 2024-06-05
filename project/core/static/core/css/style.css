@@ -111,7 +111,9 @@
     min-height: 90vh;
     background-color: rgb(165, 231, 159);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .contenedor_principal h1 {
@@ -123,4 +125,206 @@
     border-left: .5px solid black;
     border-radius: 5px;
     padding: 5px;
+}
+
+
+
+
+
+/* usuarios */
+
+.contenedor_principal .formulario_login {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.contenedor_principal .formulario_login label {
+    font-size: 1.2rem;
+}
+
+.contenedor_principal .formulario_login input {
+    border-radius: 5px;
+    border: none;
+    height: 20px;
+    padding: 5px;
+    font-size: 1rem;
+    align-self: flex-end;
+}
+
+.contenedor_principal .formulario_login button {
+    letter-spacing: 2px;
+    font-size: 1rem;
+    font-family: serif;
+    padding: 3px;
+    background: none;
+    background-color: rgb(96, 218, 85);
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+    transition-duration: .3s;
+}
+
+.contenedor_principal .formulario_login button:hover {
+    cursor: pointer;
+    background-color: rgb(27, 137, 17);
+    transition-duration: .5s;
+}
+
+.contenedor_principal .formulario_signup {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+}
+
+.contenedor_principal .formulario_signup label {
+    font-size: 1rem;
+}
+
+.contenedor_principal .formulario_signup input {
+    border-radius: 5px;
+    border: none;
+    height: 20px;
+    padding: 5px;
+    font-size: 1rem;
+    margin-left: 50px;
+}
+
+.contenedor_principal .formulario_signup select {
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    margin-left: 50px;
+}
+
+.contenedor_principal .formulario_signup button {
+    letter-spacing: 2px;
+    font-size: 1rem;
+    font-family: serif;
+    padding: 3px;
+    background: none;
+    background-color: rgb(96, 218, 85);
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+    transition-duration: .3s;
+    align-self: flex-end;
+}
+
+.contenedor_principal .formulario_signup button:hover {
+    cursor: pointer;
+    background-color: rgb(27, 137, 17);
+    transition-duration: .5s;
+}
+
+.contenedor_principal .contenedor_volver .volver {
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: black;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2px;
+    transition-duration: .2s;
+}
+
+.contenedor_principal .contenedor_volver .volver:hover {
+    background-color: rgb(51, 167, 40);
+    transition-duration: .5s;
+}
+
+.contenedor_principal .contenedor_cargar .cargar {
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: black;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2px;
+    transition-duration: .2s;
+}
+
+.contenedor_principal .contenedor_cargar .cargar:hover {
+    background-color: rgb(46, 157, 191);
+    transition-duration: .5s;
+}
+
+.contenedor_principal .editar_datos {
+    align-self: center;
+    margin-top: 50px;
+}
+
+.contenedor_principal .editar_datos a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px;
+    transition-duration: .2s;
+}
+
+.contenedor_principal .editar_datos a:hover {
+    background-color: rgb(51, 167, 40);
+    transition-duration: .5s;
+}
+
+.contenedor_principal .lista_productos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor_principal .lista_productos .producto {
+    display: flex;
+    align-items: center;
+    column-gap: 3vw;
+}
+
+.contenedor_principal .lista_productos .producto .contenedor_nombre {
+    display: flex;
+    align-items: center;
+    column-gap: 1vw;
+}
+
+.contenedor_principal .lista_productos .producto .contenedor_nombre .nombre_producto {
+    letter-spacing: 1px;
+    margin-left: 1vw;
+}
+
+.contenedor_principal .lista_productos .producto .contenedor_opciones a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px;
+    transition-duration: .2s;
+}
+
+.contenedor_principal .lista_productos .producto .contenedor_opciones .detalle:hover {
+    background-color: rgb(34, 146, 211);
+    transition-duration: .5s;
+}
+
+.contenedor_principal .lista_productos .producto .contenedor_opciones .editar:hover {
+    background-color: rgb(181, 211, 34);
+    transition-duration: .5s;
+}
+
+.contenedor_principal .lista_productos .producto .contenedor_opciones .eliminar:hover {
+    background-color: rgb(184, 50, 50);
+    transition-duration: .5s;
 }

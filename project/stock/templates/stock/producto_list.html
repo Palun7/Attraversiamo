@@ -11,16 +11,21 @@
         </div>
         <div class="lista_productos">
             {% for producto in productos %}
-                <div>
-                    <h3>{{ producto.nombre }} {{ producto.marca }} {{ producto.contenido }} ${{ producto.precio }}</h3>
-                    <a href="{% url 'stock:producto_detail' producto.id %}">Detalle del producto</a>
-                    <a href="{% url 'stock:producto_update' producto.id %}">Editar producto</a>
-                    <a href="{% url 'stock:producto_delete' producto.id %}">Eliminar producto</a>
+                <div class="producto">
+                    <div class="contenedor_nombre">
+                        <h3 class="nombre_producto">{{ producto.nombre }} {{ producto.marca }} {{ producto.contenido }} ${{ producto.precio }}</h3>
+                        <img src="{{ producto.foto.url }}" alt="" width="50px" height="">
+                    </div>
+                    <div class="contenedor_opciones">
+                        <a href="{% url 'stock:producto_detail' producto.id %}" class="detalle">Detalle del producto</a>
+                        <a href="{% url 'stock:producto_update' producto.id %}" class="editar">Editar producto</a>
+                        <a href="{% url 'stock:producto_delete' producto.id %}" class="eliminar">Eliminar producto</a>
+                    </div>
                 </div>
             {% endfor %}
         </div>
-        <div>
-            <a href="{% url 'stock:index' %}">Volver</a>
+        <div class="contenedor_volver">
+            <a href="{% url 'stock:index' %}" class="volver">Volver</a>
         </div>
     </main>
 {% endblock content %}
