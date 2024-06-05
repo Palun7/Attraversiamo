@@ -9,16 +9,19 @@
         <div>
             <h1>{{ object.nombre }} {{ object.marca }}</h1>
         </div>
-        {% if object.foto %}
-            <img src="{{ object.foto.url }}" alt="Foto de {{ object.nombre }}" width="500px" height="600px">
-        {% endif %}
-        <ul>
-            <li>Contenido Neto: {{ object.contenido }}</li>
-            <li>Precio: ${{ object.precio }}</li>
-            <li>Categoria: {{ object.categoria }}</li>
-            <li>Stock: {{ object.stock }}</li>
-            <li>Última actualización: {{ object.actualizacion }}</li>
-        </ul>
+        <div class="contenedor_informacion">
+            <ul>
+                <li>Precio: ${{ object.precio }}</li>
+                <li>Talle: {{ object.talle }}</li>
+                <li>Color: {{ object.color }}</li>
+                <li>Categoria: {{ object.categoria }}</li>
+                <li>Stock: {{ object.stock }}</li>
+                <li>Última actualización: {{ object.actualizacion }}</li>
+            </ul>
+            {% if object.foto %}
+            <img src="{{ object.foto.url }}" alt="Foto de {{ object.nombre }}" width="550px" height="">
+            {% endif %}
+        </div>
         <div class="contenedor_volver">
             <a href="{% url 'stock:producto_list' %}" class="volver">Volver</a>
         </div>

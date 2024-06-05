@@ -9,7 +9,7 @@
     align-content: center;
     max-width: 100vw;
     height: 5vh;
-    background-color: rgb(218, 145, 145);
+    background-color: rgb(247, 172, 172);
 }
 
 .navbar ul {
@@ -44,7 +44,7 @@
 
 .navbar ul li a:hover {
     cursor: pointer;
-    color: rgb(165, 231, 159);
+    color: rgb(243, 114, 114);
     transform: translateY(-3px);
     transition-duration: .5s;
 }
@@ -65,7 +65,7 @@
 
 .navbar ul .logout:hover {
     cursor: pointer;
-    color: rgb(165, 231, 159);
+    color: rgb(243, 114, 114);
     transform: translateY(-3px);
     transition-duration: .5s;
 }
@@ -83,7 +83,7 @@
     align-items: center;
     max-width: 100vw;
     height: 5vh;
-    background: linear-gradient(to bottom, rgb(165,231,159) 0%, rgb(218, 145, 145) 5%, rgb(255, 137, 137) 60%);
+    background-color: rgb(220, 147, 147);
 }
 
 .footer a {
@@ -109,7 +109,7 @@
 .contenedor_principal {
     max-width: 100vw;
     min-height: 90vh;
-    background-color: rgb(165, 231, 159);
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -187,6 +187,7 @@
 }
 
 .contenedor_principal .formulario_signup input {
+    background-color: rgb(247, 172, 172);
     border-radius: 5px;
     border: none;
     height: 20px;
@@ -196,6 +197,7 @@
 }
 
 .contenedor_principal .formulario_signup select {
+    background-color: rgb(247, 172, 172);
     font-size: 1rem;
     border-radius: 5px;
     border: none;
@@ -287,6 +289,9 @@
 }
 
 .contenedor_principal .lista_productos .producto {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
     display: flex;
     align-items: center;
     column-gap: 3vw;
@@ -327,4 +332,26 @@
 .contenedor_principal .lista_productos .producto .contenedor_opciones .eliminar:hover {
     background-color: rgb(184, 50, 50);
     transition-duration: .5s;
+}
+
+.contenedor_principal .contenedor_informacion {
+    display: flex;
+    align-items: center;
+    column-gap: 10vw;
+}
+
+.contenedor_principal .contenedor_informacion ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    align-self: flex-start;
+}
+
+.contenedor_principal .contenedor_informacion img {
+    border-radius: 5px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+    box-shadow: 1px 1px 5px 1px black;
 }
