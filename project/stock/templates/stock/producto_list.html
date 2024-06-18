@@ -6,15 +6,20 @@
 
 {% block content %}
     <main class="contenedor_principal">
-        <div>
-            <h1>Productos</h1>
+        <div class="header_lista">
+            <h1 class="titulo">Productos</h1>
+            <a href="{% url 'stock:producto_create' %}" class="link">Crear producto</a>
         </div>
         <div class="lista_productos">
             {% for producto in productos %}
                 <div class="producto">
                     <div class="contenedor_nombre">
                         <h3 class="nombre_producto">{{ producto.nombre }} {{ producto.marca }} {{ producto.contenido }} ${{ producto.precio }}</h3>
-                        <img src="{{ producto.foto.url }}" alt="" width="50px" height="">
+                        {% if producto.foto %}
+                            <img src="{{ producto.foto.url }}" alt="" width="50px" height="">
+                        {% else %}
+                            <div class="imagen_falsa"></div>
+                        {% endif %}
                     </div>
                     <div class="contenedor_opciones">
                         <a href="{% url 'stock:producto_detail' producto.id %}" class="detalle">Detalle del producto</a>

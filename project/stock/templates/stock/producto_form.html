@@ -10,9 +10,15 @@
 
 {% block content %}
     <main class="contenedor_principal">
-        <div>
-            <h1>Nuevo Producto</h1>
-        </div>
+        {% if form.instance.id %}
+            <div>
+                <h1>Editar {{ form.instance.nombre }} {{ form.instance.marca }}</h1>
+            </div>
+        {% else %}
+            <div>
+                <h1>Nuevo Producto</h1>
+            </div>
+        {% endif %}
         <form method="post" enctype="multipart/form-data" class="formulario_signup">
             {% csrf_token %}
             {{ form }}
@@ -26,14 +32,8 @@
             <a href="{% url 'stock:talle_create' %}" class="cargar">Cargar Talle</a>
         </div>
         {% endif %}
-        {% if form.instance.id %}
         <div class="contenedor_volver">
             <a href="{% url 'stock:producto_list' %}" class="volver">Volver</a>
         </div>
-        {% else %}
-        <div class="contenedor_volver">
-            <a href="{% url 'stock:index' %}" class="volver">Volver</a>
-        </div>
-        {% endif %}
     </main>
 {% endblock content %}
