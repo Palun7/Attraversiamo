@@ -43,7 +43,7 @@ class ProductoCreate(LoginRequiredMixin, CreateView):
     model = Producto
     form_class= ProductoForm
     login_url = reverse_lazy('usuarios:login')
-    success_url = reverse_lazy('stock:index')
+    success_url = reverse_lazy('stock:producto_list')
 
 class MarcaCreate(LoginRequiredMixin, CreateView):
     model = Marca

@@ -9,7 +9,7 @@
     align-content: center;
     max-width: 100vw;
     height: 5vh;
-    background-color: rgb(247, 172, 172);
+    background-color: #F8DBE5;
 }
 
 .navbar ul {
@@ -83,7 +83,7 @@
     align-items: center;
     max-width: 100vw;
     height: 5vh;
-    background-color: rgb(220, 147, 147);
+    background-color: #F8DBE5;
 }
 
 .footer a {
@@ -96,8 +96,9 @@
 
 .footer a:hover {
     cursor: pointer;
-    color: rgb(165, 231, 159);
+    color: rgb(243, 114, 114);
     transition-duration: .5s;
+    transform: translateY(-3px);
 }
 
 
@@ -145,6 +146,7 @@
 }
 
 .contenedor_principal .formulario_login input {
+    background-color: #F8DBE5;
     border-radius: 5px;
     border: none;
     height: 20px;
@@ -159,7 +161,7 @@
     font-family: serif;
     padding: 3px;
     background: none;
-    background-color: rgb(96, 218, 85);
+    background-color: #F8DBE5;
     border: 1px solid black;
     border-radius: 5px;
     margin: 0;
@@ -171,7 +173,7 @@
 
 .contenedor_principal .formulario_login button:hover {
     cursor: pointer;
-    background-color: rgb(27, 137, 17);
+    background-color: #f7a3c1;
     transition-duration: .5s;
 }
 
@@ -187,7 +189,7 @@
 }
 
 .contenedor_principal .formulario_signup input {
-    background-color: rgb(247, 172, 172);
+    background-color: #F8DBE5;
     border-radius: 5px;
     border: none;
     height: 20px;
@@ -197,7 +199,7 @@
 }
 
 .contenedor_principal .formulario_signup select {
-    background-color: rgb(247, 172, 172);
+    background-color: #F8DBE5;
     font-size: 1rem;
     border-radius: 5px;
     border: none;
@@ -211,7 +213,7 @@
     font-family: serif;
     padding: 3px;
     background: none;
-    background-color: rgb(96, 218, 85);
+    background-color: #F8DBE5;
     border: 1px solid black;
     border-radius: 5px;
     margin: 0;
@@ -224,7 +226,7 @@
 
 .contenedor_principal .formulario_signup button:hover {
     cursor: pointer;
-    background-color: rgb(27, 137, 17);
+    background-color: #f6a6c2;
     transition-duration: .5s;
 }
 
@@ -240,7 +242,7 @@
 }
 
 .contenedor_principal .contenedor_volver .volver:hover {
-    background-color: rgb(51, 167, 40);
+    background-color: #F8DBE5;
     transition-duration: .5s;
 }
 
@@ -256,7 +258,7 @@
 }
 
 .contenedor_principal .contenedor_cargar .cargar:hover {
-    background-color: rgb(46, 157, 191);
+    background-color: #F8DBE5;
     transition-duration: .5s;
 }
 
@@ -277,7 +279,30 @@
 }
 
 .contenedor_principal .editar_datos a:hover {
-    background-color: rgb(51, 167, 40);
+    background-color: #F8DBE5;
+    transition-duration: .5s;
+}
+
+.contenedor_principal .header_lista {
+    display: flex;
+    align-items: center;
+    column-gap: 5vw;
+}
+
+.contenedor_principal .header_lista .link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 20px;
+    margin-top: 5vh;
+    transition-duration: .2s;
+}
+
+.contenedor_principal .header_lista .link:hover {
+    background-color: #F8DBE5;
     transition-duration: .5s;
 }
 
@@ -289,6 +314,8 @@
 }
 
 .contenedor_principal .lista_productos .producto {
+    width: 50vw;
+    margin-bottom: 1vh;
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
@@ -301,6 +328,11 @@
     display: flex;
     align-items: center;
     column-gap: 1vw;
+}
+
+.contenedor_principal .lista_productos .producto .contenedor_nombre .imagen_falsa {
+    height: 50px;
+    width: 50px;
 }
 
 .contenedor_principal .lista_productos .producto .contenedor_nombre .nombre_producto {
@@ -320,17 +352,17 @@
 }
 
 .contenedor_principal .lista_productos .producto .contenedor_opciones .detalle:hover {
-    background-color: rgb(34, 146, 211);
+    background-color: #F8DBE5;
     transition-duration: .5s;
 }
 
 .contenedor_principal .lista_productos .producto .contenedor_opciones .editar:hover {
-    background-color: rgb(181, 211, 34);
+    background-color: #f397b7;
     transition-duration: .5s;
 }
 
 .contenedor_principal .lista_productos .producto .contenedor_opciones .eliminar:hover {
-    background-color: rgb(184, 50, 50);
+    background-color: #f5387a;
     transition-duration: .5s;
 }
 
@@ -354,4 +386,22 @@
     border-bottom: 3px solid black;
     border-right: 3px solid black;
     box-shadow: 1px 1px 5px 1px black;
+}
+
+.contenedor_principal .contenedor_informacion .imagen_falsa_detalle {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+    box-shadow: 1px 1px 5px 1px black;
+}
+
+.contenedor_principal .contenedor_informacion .imagen_falsa_detalle h3 {
+    letter-spacing: .7px;
 }
