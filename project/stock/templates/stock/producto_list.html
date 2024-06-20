@@ -14,12 +14,12 @@
             {% for producto in productos %}
                 <div class="producto">
                     <div class="contenedor_nombre">
-                        <h3 class="nombre_producto">{{ producto.nombre }} {{ producto.marca }} {{ producto.contenido }} ${{ producto.precio }}</h3>
                         {% if producto.foto %}
-                            <img src="{{ producto.foto.url }}" alt="" width="50px" height="">
+                            <img src="{{ producto.foto.url }}" alt="" width="" height="">
                         {% else %}
                             <div class="imagen_falsa"></div>
                         {% endif %}
+                        <h3 class="nombre_producto">{{ producto.nombre }} {{ producto.marca }} {{ producto.contenido }} ${{ producto.precio }}</h3>
                     </div>
                     <div class="contenedor_opciones">
                         <a href="{% url 'stock:producto_detail' producto.id %}" class="detalle">Detalle del producto</a>

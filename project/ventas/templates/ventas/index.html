@@ -1,4 +1,5 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block title %}
     Ventas
@@ -7,5 +8,19 @@
 {% block content %}
     <main class="contenedor_principal">
         <h1 class="titulo">Tienda</h1>
+        <div class="links">
+            <a href="">
+                <div>
+                    <img src="{% static 'img/arriba.jpeg' %}" alt="" height="" width="400px">
+                    <h2 class="arriba">Parte de arriba</h2>
+                </div>
+            </a>
+            <a href="">
+                <div>
+                    <img src="{% static 'img/abajo.jpeg' %}" alt="" height="" width="400px">
+                    <h2 class="abajo">Parte de abajo</h2>
+                </div>
+            </a>
+        </div>
     </main>
 {% endblock content %}
